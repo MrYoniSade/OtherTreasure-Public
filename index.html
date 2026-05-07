@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OtherTreasure</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .logo-wrap {
+      width: 100px;
+      height: 100px;
+      border-radius: 22px;
+      background: #2e7d32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      box-shadow: 0 4px 20px rgba(46,125,50,0.25);
+    }
+    .logo-wrap svg { width: 56px; height: 56px; fill: #fff; }
+    h1 { font-size: 2rem; font-weight: 800; color: #1b5e20; letter-spacing: -0.5px; }
+    p.tagline {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 360px;
+    }
+    .links {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 320px;
+    }
+    .links a {
+      display: block;
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: 1px solid #c8e6c9;
+      background: #fff;
+      color: #2e7d32;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .links a:hover { background: #e8f5e9; }
+    footer {
+      margin-top: 60px;
+      font-size: 0.78rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-wrap">
+    <!-- treasure chest icon -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 8h14a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1zm7 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM4 8V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2H4z"/>
+    </svg>
+  </div>
+
+  <h1>OtherTreasure</h1>
+  <p class="tagline">Save our planet and find a fortune.<br>Give away items you no longer need.</p>
+
+  <div class="links">
+    <a href="privacy-policy.html?lang=en" data-legal-link="privacy-policy">Privacy Policy</a>
+    <a href="terms.html?lang=en" data-legal-link="terms">Terms of Service</a>
+    <a href="data-deletion.html?lang=en" data-legal-link="data-deletion">Data Deletion Request</a>
+  </div>
+
+  <footer>&copy; 2026 OtherTreasure</footer>
+
+  <script>
+    (function () {
+      var lang = (navigator.language || '').toLowerCase();
+      var suffix = '';
+      if (lang.indexOf('es') === 0) suffix = '_es';
+      else if (lang.indexOf('he') === 0) suffix = '_he';
+      else if (lang.indexOf('ar') === 0) suffix = '_ar';
+      else if (lang.indexOf('ru') === 0) suffix = '_ru';
+
+      var links = document.querySelectorAll('[data-legal-link]');
+      links.forEach(function (link) {
+        var page = link.getAttribute('data-legal-link');
+        var langCode = suffix ? suffix.slice(1) : 'en';
+        var target = suffix ? page + suffix + '.html' : page + '.html';
+        link.setAttribute('href', target + '?lang=' + langCode);
+      });
+    })();
+  </script>
+
+</body>
+</html>

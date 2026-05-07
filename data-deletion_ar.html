@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حذف البيانات - OtherTreasure</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.7; }
+    header { background: #2e7d32; color: #fff; padding: 28px 24px 24px; text-align: center; }
+    header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.3px; }
+    header p { margin-top: 6px; font-size: 0.85rem; opacity: 0.9; }
+    main { max-width: 760px; margin: 40px auto; padding: 0 20px 60px; }
+    .language-switcher { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .language-switcher a { font-size: 0.85rem; text-decoration: none; background: #fff; border: 1px solid #c8e6c9; color: #2e7d32; border-radius: 999px; padding: 6px 12px; }
+    h2 { font-size: 1rem; font-weight: 700; color: #2e7d32; margin: 32px 0 8px; }
+    p, li { font-size: 0.95rem; color: #333; }
+    ul { padding-right: 20px; }
+    li { margin-bottom: 6px; }
+    a { color: #2e7d32; }
+    .card { background: #fff; border: 1px solid #c8e6c9; border-radius: 12px; padding: 24px 28px; margin: 24px 0; }
+    .card h3 { font-size: 1rem; color: #2e7d32; margin-bottom: 10px; }
+    .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+    .step-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #2e7d32; color: #fff; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .email-box { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 14px 18px; font-size: 0.95rem; margin-top: 12px; }
+    .email-box strong { display: block; margin-bottom: 4px; color: #1b5e20; }
+    footer { text-align: center; padding: 24px; font-size: 0.8rem; color: #888; border-top: 1px solid #e0e0e0; }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>OtherTreasure - حذف البيانات</h1>
+  <p>بياناتك، سيطرتك.</p>
+</header>
+
+<main>
+  <nav class="language-switcher" aria-label="اختيار اللغة">
+    <a href="data-deletion.html?lang=en">English</a>
+    <a href="data-deletion_es.html?lang=es">Espanol</a>
+    <a href="data-deletion_he.html?lang=he">Hebrew</a>
+    <a href="data-deletion_ar.html?lang=ar">Arabic</a>
+    <a href="data-deletion_ru.html?lang=ru">Russian</a>
+  </nav>
+
+  <p>لديك الحق في طلب حذف جميع البيانات الشخصية التي تحتفظ بها OtherTreasure عنك. توضح هذه الصفحة ما البيانات التي نخزنها، وما الذي يتم حذفه، وكيفية تقديم طلب حذف.</p>
+
+  <h2>ما البيانات التي نخزنها</h2>
+  <p>نحن نخزن فقط المعلومات الضرورية لتشغيل التطبيق:</p>
+  <ul>
+    <li>معلومات الحساب - الاسم، عنوان البريد الإلكتروني، وصورة الملف الشخصي من مزود تسجيل الدخول الخاص بك (Google أو Facebook أو Apple أو البريد الإلكتروني).</li>
+    <li>قوائم العناصر - العناوين، الأوصاف، الفئات، الصور، وإحداثيات GPS للعناصر التي نشرتها.</li>
+    <li>رقم اتصال اختياري - رقم هاتف ربما أضفته إلى إعلان.</li>
+    <li>بيانات وصفية للاستخدام - تاريخ إنشاء الحساب، آخر ظهور، إصدار التطبيق، وبيانات تقنية مشابهة غير حساسة.</li>
+  </ul>
+  <p>لا نخزن معلومات الدفع أو قوائم جهات الاتصال أو بيانات الموقع في الخلفية.</p>
+
+  <h2>ما الذي يتم حذفه</h2>
+  <p>عندما تطلب حذف الحساب، تتم إزالة البيانات التالية نهائيا خلال 30 يوما:</p>
+  <ul>
+    <li>ملفك الشخصي وكل البيانات الوصفية المرتبطة به</li>
+    <li>كل قوائم العناصر التي أنشأتها</li>
+    <li>كل صور القوائم المخزنة على خوادمنا</li>
+    <li>أي أرقام هواتف مرفقة بقوائمك</li>
+    <li>سجل المصادقة الخاص بك (Firebase Auth)</li>
+  </ul>
+  <p>ملاحظة: بيانات التحليلات المجمعة والمجهولة التي لا يمكنها تحديد هويتك لا تخضع للحذف لأنها لا تحتوي على معلومات شخصية.</p>
+
+  <h2>كيفية حذف بياناتك</h2>
+
+  <div class="card">
+    <h3>الخيار 1 - الحذف مباشرة من التطبيق (فوري)</h3>
+    <div class="step"><div class="step-num">1</div><p>افتح OtherTreasure وسجل الدخول.</p></div>
+    <div class="step"><div class="step-num">2</div><p>اضغط على أيقونة الملف الشخصي -> الإعدادات.</p></div>
+    <div class="step"><div class="step-num">3</div><p>اضغط على حذف الحساب وأكد.</p></div>
+    <p>ستتم جدولة حسابك للحذف النهائي، وسيتم إزالة جميع البيانات المرتبطة خلال 30 يوما.</p>
+  </div>
+
+  <div class="card">
+    <h3>الخيار 2 - طلب عبر البريد الإلكتروني</h3>
+    <p>إذا لم تتمكن من الوصول إلى التطبيق أو كنت تفضل تقديم طلب الحذف يدويا، يمكنك مراسلتنا عبر البريد الإلكتروني.</p>
+    <p>أرسل رسالة بعنوان:</p>
+    <p><strong>"Data Deletion Request"</strong></p>
+    <p>قم بتضمين:</p>
+    <ul>
+      <li>عنوان البريد الإلكتروني المرتبط بحسابك</li>
+      <li>أو معرف Facebook الخاص بك (إذا كنت قد استخدمت Facebook Login)</li>
+    </ul>
+    <p>سنقوم بمعالجة طلبك خلال 30 يوما ونؤكد لك عند اكتمال الحذف.</p>
+    <div class="email-box">
+      <strong>أرسل طلبك إلى:</strong>
+      <a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a>
+    </div>
+  </div>
+
+  <h2>مستخدمو Facebook Login</h2>
+  <p>إذا قمت بتسجيل الدخول باستخدام Facebook Login، يمكنك أيضا إزالة الاتصال بين حساب Facebook الخاص بك وOtherTreasure:</p>
+  <ul>
+    <li>اذهب إلى Facebook Settings &amp; Privacy -> Settings -> Apps and Websites</li>
+    <li>ابحث عن OtherTreasure</li>
+    <li>اختر Remove</li>
+  </ul>
+  <p>هذا يلغي وصولنا إلى ملفك الشخصي على Facebook.</p>
+  <p>مهم: إزالة التطبيق من Facebook لا تحذف البيانات المخزنة في OtherTreasure. لحذف بياناتك بالكامل، يجب استخدام الخيار 1 أو الخيار 2 أعلاه.</p>
+
+  <h2>أسئلة</h2>
+  <p>إذا كانت لديك أي أسئلة حول بياناتك أو عملية الحذف، تواصل معنا على:</p>
+  <p><a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a></p>
+</main>
+
+<footer>
+  &copy; 2026 OtherTreasure &nbsp;|&nbsp;
+  <a href="/privacy-policy">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="/terms">Terms of Service</a> &nbsp;|&nbsp;
+  <a href="/data-deletion">Data Deletion</a>
+</footer>
+</body>
+</html>

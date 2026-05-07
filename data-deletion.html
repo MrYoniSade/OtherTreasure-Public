@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Deletion - OtherTreasure</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    header {
+      background: #2e7d32;
+      color: #fff;
+      padding: 28px 24px 24px;
+      text-align: center;
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.3px; }
+    header p { margin-top: 6px; font-size: 0.85rem; opacity: 0.9; }
+    main {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+    .language-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .language-switcher a {
+      font-size: 0.85rem;
+      text-decoration: none;
+      background: #ffffff;
+      border: 1px solid #c8e6c9;
+      color: #2e7d32;
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #2e7d32;
+      margin: 32px 0 8px;
+    }
+    p, li { font-size: 0.95rem; color: #333; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    a { color: #2e7d32; }
+    .card {
+      background: #fff;
+      border: 1px solid #c8e6c9;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .card h3 { font-size: 1rem; color: #2e7d32; margin-bottom: 10px; }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #2e7d32;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .email-box {
+      background: #e8f5e9;
+      border: 1px solid #c8e6c9;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.95rem;
+      margin-top: 12px;
+    }
+    .email-box strong { display: block; margin-bottom: 4px; color: #1b5e20; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: #888;
+      border-top: 1px solid #e0e0e0;
+    }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>OtherTreasure - Data Deletion</h1>
+  <p>Your data, your control.</p>
+</header>
+
+<main>
+  <nav class="language-switcher" aria-label="Language selector">
+    <a href="data-deletion.html?lang=en">English</a>
+    <a href="data-deletion_es.html?lang=es">Espanol</a>
+    <a href="data-deletion_he.html?lang=he">Hebrew</a>
+    <a href="data-deletion_ar.html?lang=ar">Arabic</a>
+    <a href="data-deletion_ru.html?lang=ru">Russian</a>
+  </nav>
+
+  <p>You have the right to request deletion of all personal data that OtherTreasure holds about you. This page explains what data we store, what gets deleted, and how to submit a deletion request.</p>
+
+  <h2>What Data We Store</h2>
+  <p>We store only the information necessary to operate the App:</p>
+  <ul>
+    <li>Account information - name, email address, and profile photo from your sign-in provider (Google, Facebook, Apple, or email).</li>
+    <li>Item listings - titles, descriptions, categories, photos, and GPS coordinates of items you posted.</li>
+    <li>Optional contact number - a phone number you may have added to a listing.</li>
+    <li>Usage metadata - account creation date, last-seen timestamp, app version, and similar non-sensitive technical data.</li>
+  </ul>
+  <p>We do not store payment information, contact lists, or background location data.</p>
+
+  <h2>What Gets Deleted</h2>
+  <p>When you request account deletion, the following data is permanently removed within 30 days:</p>
+  <ul>
+    <li>Your user profile and all associated metadata</li>
+    <li>All item listings you created</li>
+    <li>All listing photos stored in our servers</li>
+    <li>Any contact phone numbers attached to your listings</li>
+    <li>Your authentication record (Firebase Auth)</li>
+  </ul>
+  <p>Note: Anonymous, aggregated analytics data that cannot identify you is not subject to deletion because it contains no personal information.</p>
+
+  <h2>How to Delete Your Data</h2>
+
+  <div class="card">
+    <h3>Option 1 - Delete Directly in the App (Instant)</h3>
+    <div class="step">
+      <div class="step-num">1</div>
+      <p>Open OtherTreasure and sign in.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <p>Tap the Profile icon -> Settings.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <p>Tap Delete Account and confirm.</p>
+    </div>
+    <p>Your account will be scheduled for permanent deletion, and all associated data will be removed within 30 days.</p>
+  </div>
+
+  <div class="card">
+    <h3>Option 2 - Request by Email</h3>
+    <p>If you cannot access the App or prefer to request deletion manually, you may email us.</p>
+    <p>Send a message with the subject line:</p>
+    <p><strong>"Data Deletion Request"</strong></p>
+    <p>Include:</p>
+    <ul>
+      <li>the email address associated with your account</li>
+      <li>or your Facebook ID (if you used Facebook Login)</li>
+    </ul>
+    <p>We will process your request within 30 days and confirm once deletion is complete.</p>
+    <div class="email-box">
+      <strong>Send your request to:</strong>
+      <a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a>
+    </div>
+  </div>
+
+  <h2>Facebook Login Users</h2>
+  <p>If you signed in using Facebook Login, you can also remove the connection between your Facebook account and OtherTreasure:</p>
+  <ul>
+    <li>Go to Facebook Settings &amp; Privacy -> Settings -> Apps and Websites</li>
+    <li>Find OtherTreasure</li>
+    <li>Select Remove</li>
+  </ul>
+  <p>This revokes our access to your Facebook profile.</p>
+  <p>Important: Removing the app from Facebook does not delete the data stored in OtherTreasure. To fully delete your data, you must use Option 1 or Option 2 above.</p>
+
+  <h2>Questions</h2>
+  <p>If you have any questions about your data or the deletion process, contact us at:</p>
+  <p><a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a></p>
+
+</main>
+
+<footer>
+  &copy; 2026 OtherTreasure &nbsp;|&nbsp;
+  <a href="/privacy-policy">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="/terms">Terms of Service</a> &nbsp;|&nbsp;
+  <a href="/data-deletion">Data Deletion</a>
+</footer>
+
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.has('lang')) {
+      return;
+    }
+    var lang = (navigator.language || '').toLowerCase();
+    var file = 'data-deletion.html';
+    if (lang.indexOf('es') === 0) file = 'data-deletion_es.html';
+    else if (lang.indexOf('he') === 0) file = 'data-deletion_he.html';
+    else if (lang.indexOf('ar') === 0) file = 'data-deletion_ar.html';
+    else if (lang.indexOf('ru') === 0) file = 'data-deletion_ru.html';
+    if (file !== 'data-deletion.html' && !window.location.pathname.endsWith('/' + file)) {
+      window.location.replace(file);
+    }
+  })();
+</script>
+
+</body>
+</html>

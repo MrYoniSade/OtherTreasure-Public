@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eliminacion de Datos - OtherTreasure</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.7; }
+    header { background: #2e7d32; color: #fff; padding: 28px 24px 24px; text-align: center; }
+    header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.3px; }
+    header p { margin-top: 6px; font-size: 0.85rem; opacity: 0.9; }
+    main { max-width: 760px; margin: 40px auto; padding: 0 20px 60px; }
+    .language-switcher { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .language-switcher a { font-size: 0.85rem; text-decoration: none; background: #fff; border: 1px solid #c8e6c9; color: #2e7d32; border-radius: 999px; padding: 6px 12px; }
+    h2 { font-size: 1rem; font-weight: 700; color: #2e7d32; margin: 32px 0 8px; }
+    p, li { font-size: 0.95rem; color: #333; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    a { color: #2e7d32; }
+    .card { background: #fff; border: 1px solid #c8e6c9; border-radius: 12px; padding: 24px 28px; margin: 24px 0; }
+    .card h3 { font-size: 1rem; color: #2e7d32; margin-bottom: 10px; }
+    .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+    .step-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #2e7d32; color: #fff; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .email-box { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 14px 18px; font-size: 0.95rem; margin-top: 12px; }
+    .email-box strong { display: block; margin-bottom: 4px; color: #1b5e20; }
+    footer { text-align: center; padding: 24px; font-size: 0.8rem; color: #888; border-top: 1px solid #e0e0e0; }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>OtherTreasure - Eliminacion de Datos</h1>
+  <p>Tus datos, tu control.</p>
+</header>
+
+<main>
+  <nav class="language-switcher" aria-label="Selector de idioma">
+    <a href="data-deletion.html?lang=en">English</a>
+    <a href="data-deletion_es.html?lang=es">Espanol</a>
+    <a href="data-deletion_he.html?lang=he">Hebrew</a>
+    <a href="data-deletion_ar.html?lang=ar">Arabic</a>
+    <a href="data-deletion_ru.html?lang=ru">Russian</a>
+  </nav>
+
+  <p>Tienes derecho a solicitar la eliminacion de todos los datos personales que OtherTreasure conserva sobre ti. Esta pagina explica que datos almacenamos, que se elimina y como enviar una solicitud de eliminacion.</p>
+
+  <h2>Que datos almacenamos</h2>
+  <p>Almacenamos solo la informacion necesaria para operar la App:</p>
+  <ul>
+    <li>Informacion de cuenta - nombre, correo electronico y foto de perfil de tu proveedor de inicio de sesion (Google, Facebook, Apple o correo).</li>
+    <li>Publicaciones - titulos, descripciones, categorias, fotos y coordenadas GPS de los articulos que publicaste.</li>
+    <li>Numero de contacto opcional - un numero de telefono que puedas haber agregado a una publicacion.</li>
+    <li>Metadatos de uso - fecha de creacion de cuenta, ultima actividad, version de la app y datos tecnicos similares no sensibles.</li>
+  </ul>
+  <p>No almacenamos informacion de pago, listas de contactos ni datos de ubicacion en segundo plano.</p>
+
+  <h2>Que se elimina</h2>
+  <p>Cuando solicitas la eliminacion de la cuenta, los siguientes datos se eliminan permanentemente en un plazo de 30 dias:</p>
+  <ul>
+    <li>Tu perfil de usuario y todos los metadatos asociados</li>
+    <li>Todas las publicaciones que creaste</li>
+    <li>Todas las fotos de publicaciones almacenadas en nuestros servidores</li>
+    <li>Cualquier numero de telefono adjunto a tus publicaciones</li>
+    <li>Tu registro de autenticacion (Firebase Auth)</li>
+  </ul>
+  <p>Nota: Los datos anonimos y agregados de analitica que no pueden identificarte no estan sujetos a eliminacion porque no contienen informacion personal.</p>
+
+  <h2>Como eliminar tus datos</h2>
+
+  <div class="card">
+    <h3>Opcion 1 - Eliminar directamente en la App (instantaneo)</h3>
+    <div class="step"><div class="step-num">1</div><p>Abre OtherTreasure e inicia sesion.</p></div>
+    <div class="step"><div class="step-num">2</div><p>Toca el icono de Perfil -> Configuracion.</p></div>
+    <div class="step"><div class="step-num">3</div><p>Toca Eliminar cuenta y confirma.</p></div>
+    <p>Tu cuenta se programara para eliminacion permanente y todos los datos asociados se eliminaran en un plazo de 30 dias.</p>
+  </div>
+
+  <div class="card">
+    <h3>Opcion 2 - Solicitud por correo</h3>
+    <p>Si no puedes acceder a la App o prefieres solicitar la eliminacion manualmente, puedes enviarnos un correo.</p>
+    <p>Envia un mensaje con el asunto:</p>
+    <p><strong>"Data Deletion Request"</strong></p>
+    <p>Incluye:</p>
+    <ul>
+      <li>el correo electronico asociado a tu cuenta</li>
+      <li>o tu ID de Facebook (si usaste Facebook Login)</li>
+    </ul>
+    <p>Procesaremos tu solicitud en un plazo de 30 dias y confirmaremos cuando la eliminacion se haya completado.</p>
+    <div class="email-box">
+      <strong>Envia tu solicitud a:</strong>
+      <a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a>
+    </div>
+  </div>
+
+  <h2>Usuarios de Facebook Login</h2>
+  <p>Si iniciaste sesion usando Facebook Login, tambien puedes eliminar la conexion entre tu cuenta de Facebook y OtherTreasure:</p>
+  <ul>
+    <li>Ve a Facebook Settings &amp; Privacy -> Settings -> Apps and Websites</li>
+    <li>Busca OtherTreasure</li>
+    <li>Selecciona Remove</li>
+  </ul>
+  <p>Esto revoca nuestro acceso a tu perfil de Facebook.</p>
+  <p>Importante: Eliminar la app de Facebook no elimina los datos almacenados en OtherTreasure. Para borrar completamente tus datos, debes usar la Opcion 1 o la Opcion 2.</p>
+
+  <h2>Preguntas</h2>
+  <p>Si tienes preguntas sobre tus datos o el proceso de eliminacion, contactanos en:</p>
+  <p><a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a></p>
+</main>
+
+<footer>
+  &copy; 2026 OtherTreasure &nbsp;|&nbsp;
+  <a href="/privacy-policy">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="/terms">Terms of Service</a> &nbsp;|&nbsp;
+  <a href="/data-deletion">Data Deletion</a>
+</footer>
+</body>
+</html>

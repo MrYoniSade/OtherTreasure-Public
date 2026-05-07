@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>מחיקת נתונים - OtherTreasure</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f9f9f9; color: #1a1a1a; line-height: 1.7; }
+    header { background: #2e7d32; color: #fff; padding: 28px 24px 24px; text-align: center; }
+    header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.3px; }
+    header p { margin-top: 6px; font-size: 0.85rem; opacity: 0.9; }
+    main { max-width: 760px; margin: 40px auto; padding: 0 20px 60px; }
+    .language-switcher { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .language-switcher a { font-size: 0.85rem; text-decoration: none; background: #fff; border: 1px solid #c8e6c9; color: #2e7d32; border-radius: 999px; padding: 6px 12px; }
+    h2 { font-size: 1rem; font-weight: 700; color: #2e7d32; margin: 32px 0 8px; }
+    p, li { font-size: 0.95rem; color: #333; }
+    ul { padding-right: 20px; }
+    li { margin-bottom: 6px; }
+    a { color: #2e7d32; }
+    .card { background: #fff; border: 1px solid #c8e6c9; border-radius: 12px; padding: 24px 28px; margin: 24px 0; }
+    .card h3 { font-size: 1rem; color: #2e7d32; margin-bottom: 10px; }
+    .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+    .step-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #2e7d32; color: #fff; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .email-box { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 8px; padding: 14px 18px; font-size: 0.95rem; margin-top: 12px; }
+    .email-box strong { display: block; margin-bottom: 4px; color: #1b5e20; }
+    footer { text-align: center; padding: 24px; font-size: 0.8rem; color: #888; border-top: 1px solid #e0e0e0; }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>OtherTreasure - מחיקת נתונים</h1>
+  <p>הנתונים שלך, השליטה שלך.</p>
+</header>
+
+<main>
+  <nav class="language-switcher" aria-label="בחירת שפה">
+    <a href="data-deletion.html?lang=en">English</a>
+    <a href="data-deletion_es.html?lang=es">Espanol</a>
+    <a href="data-deletion_he.html?lang=he">Hebrew</a>
+    <a href="data-deletion_ar.html?lang=ar">Arabic</a>
+    <a href="data-deletion_ru.html?lang=ru">Russian</a>
+  </nav>
+
+  <p>יש לך זכות לבקש מחיקה של כל המידע האישי ש-OtherTreasure מחזיקה עליך. עמוד זה מסביר אילו נתונים אנו שומרים, מה נמחק, וכיצד להגיש בקשת מחיקה.</p>
+
+  <h2>אילו נתונים אנו שומרים</h2>
+  <p>אנו שומרים רק את המידע הדרוש להפעלת האפליקציה:</p>
+  <ul>
+    <li>פרטי חשבון - שם, כתובת דוא"ל ותמונת פרופיל מספק ההתחברות שלך (Google, Facebook, Apple או דוא"ל).</li>
+    <li>פרסומי פריטים - כותרות, תיאורים, קטגוריות, תמונות וקואורדינטות GPS של פריטים שפרסמת.</li>
+    <li>מספר קשר אופציונלי - מספר טלפון שאולי הוספת לפרסום.</li>
+    <li>מטא-נתוני שימוש - תאריך יצירת החשבון, זמן פעילות אחרון, גרסת אפליקציה ונתונים טכניים דומים שאינם רגישים.</li>
+  </ul>
+  <p>איננו שומרים פרטי תשלום, רשימות אנשי קשר או נתוני מיקום ברקע.</p>
+
+  <h2>מה נמחק</h2>
+  <p>כאשר אתה מבקש מחיקת חשבון, הנתונים הבאים יוסרו לצמיתות בתוך 30 יום:</p>
+  <ul>
+    <li>פרופיל המשתמש שלך וכל המטא-נתונים המשויכים</li>
+    <li>כל פרסומי הפריטים שיצרת</li>
+    <li>כל תמונות הפרסומים המאוחסנות בשרתים שלנו</li>
+    <li>כל מספרי הטלפון שצורפו לפרסומים שלך</li>
+    <li>רשומת האימות שלך (Firebase Auth)</li>
+  </ul>
+  <p>הערה: נתוני אנליטיקה אנונימיים ומצטברים שאינם יכולים לזהות אותך אינם כפופים למחיקה משום שאינם כוללים מידע אישי.</p>
+
+  <h2>כיצד למחוק את הנתונים שלך</h2>
+
+  <div class="card">
+    <h3>אפשרות 1 - מחיקה ישירה בתוך האפליקציה (מיידי)</h3>
+    <div class="step"><div class="step-num">1</div><p>פתח את OtherTreasure והתחבר.</p></div>
+    <div class="step"><div class="step-num">2</div><p>הקש על סמל הפרופיל -> הגדרות.</p></div>
+    <div class="step"><div class="step-num">3</div><p>הקש על מחיקת חשבון ואשר.</p></div>
+    <p>החשבון שלך יסומן למחיקה לצמיתות, וכל הנתונים המשויכים יוסרו בתוך 30 יום.</p>
+  </div>
+
+  <div class="card">
+    <h3>אפשרות 2 - בקשה בדוא"ל</h3>
+    <p>אם אינך יכול לגשת לאפליקציה או מעדיף לבקש מחיקה ידנית, ניתן לשלוח לנו דוא"ל.</p>
+    <p>שלח הודעה עם שורת הנושא:</p>
+    <p><strong>"Data Deletion Request"</strong></p>
+    <p>כלול:</p>
+    <ul>
+      <li>את כתובת הדוא"ל המשויכת לחשבון שלך</li>
+      <li>או את מזהה הפייסבוק שלך (אם השתמשת ב-Facebook Login)</li>
+    </ul>
+    <p>נטפל בבקשה בתוך 30 יום ונאשר לאחר השלמת המחיקה.</p>
+    <div class="email-box">
+      <strong>שלח את הבקשה אל:</strong>
+      <a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a>
+    </div>
+  </div>
+
+  <h2>משתמשי Facebook Login</h2>
+  <p>אם התחברת באמצעות Facebook Login, תוכל גם להסיר את החיבור בין חשבון הפייסבוק שלך ל-OtherTreasure:</p>
+  <ul>
+    <li>עבור אל Facebook Settings &amp; Privacy -> Settings -> Apps and Websites</li>
+    <li>מצא את OtherTreasure</li>
+    <li>בחר Remove</li>
+  </ul>
+  <p>פעולה זו מבטלת את הגישה שלנו לפרופיל הפייסבוק שלך.</p>
+  <p>חשוב: הסרת האפליקציה מפייסבוק אינה מוחקת את הנתונים המאוחסנים ב-OtherTreasure. כדי למחוק את הנתונים במלואם, עליך להשתמש באפשרות 1 או 2 לעיל.</p>
+
+  <h2>שאלות</h2>
+  <p>אם יש לך שאלות על הנתונים שלך או על תהליך המחיקה, ניתן לפנות אלינו בכתובת:</p>
+  <p><a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a></p>
+</main>
+
+<footer>
+  &copy; 2026 OtherTreasure &nbsp;|&nbsp;
+  <a href="/privacy-policy">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="/terms">Terms of Service</a> &nbsp;|&nbsp;
+  <a href="/data-deletion">Data Deletion</a>
+</footer>
+</body>
+</html>
