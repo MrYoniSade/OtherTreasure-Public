@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Child Safety Standards - OtherTreasure</title>
+  <title>תקני בטיחות ילדים - OtherTreasure</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -47,7 +47,7 @@
       margin: 32px 0 8px;
     }
     p, li { font-size: 0.95rem; color: #333; }
-    ul { padding-left: 20px; }
+    ul { padding-right: 20px; }
     li { margin-bottom: 6px; }
     a { color: #2e7d32; }
     .badge {
@@ -72,12 +72,12 @@
 </head>
 <body>
 <header>
-  <h1>OtherTreasure - Child Safety Standards</h1>
-  <p>Safe sharing in local communities.</p>
+  <h1>OtherTreasure - תקני בטיחות ילדים</h1>
+  <p>שיתוף בטוח בתוך הקהילה.</p>
 </header>
 
 <main>
-  <nav class="language-switcher" aria-label="Language selector">
+  <nav class="language-switcher" aria-label="בחירת שפה">
     <a href="child-safety.html?lang=en">English</a>
     <a href="child-safety_es.html?lang=es">Espanol</a>
     <a href="child-safety_he.html?lang=he">Hebrew</a>
@@ -86,59 +86,40 @@
     <a href="child-safety_fr.html?lang=fr">French</a>
   </nav>
 
-  <p class="badge">Last updated: May 2026</p>
+  <p class="badge">עדכון אחרון: מאי 2026</p>
 
-  <h2>1. Platform Scope</h2>
-  <p><strong>OtherTreasure</strong> is a local platform for giving away and finding free items. The app is designed for adults and is not directed to children.</p>
+  <h2>1. מטרת הפלטפורמה</h2>
+  <p><strong>OtherTreasure</strong> היא פלטפורמה מקומית למסירה וקבלה של פריטים בחינם. האפליקציה מיועדת למבוגרים בלבד ואינה מיועדת לילדים.</p>
 
-  <h2>2. Age Restriction</h2>
-  <p>The minimum age to use OtherTreasure is 18. Accounts identified as minors may be suspended or removed.</p>
+  <h2>2. הגבלת גיל</h2>
+  <p>השימוש ב-OtherTreasure מותר מגיל 18 ומעלה. חשבונות של משתמשים קטינים עלולים להיות מושעים או מוסרים.</p>
 
-  <h2>3. Zero-Tolerance Policy</h2>
-  <p>We have a zero-tolerance policy for child sexual abuse and exploitation material (CSAM/CSAE), or any content that endangers minors.</p>
+  <h2>3. מדיניות אפס סובלנות</h2>
+  <p>יש לנו מדיניות אפס סובלנות כלפי חומרי פגיעה מינית בילדים (CSAM/CSAE) או כל תוכן שמסכן קטינים.</p>
   <ul>
-    <li>Such content is strictly prohibited.</li>
-    <li>Associated accounts are removed immediately.</li>
-    <li>Where legally required, we report to the relevant authorities.</li>
+    <li>תוכן כזה אסור בהחלט.</li>
+    <li>חשבונות מעורבים יוסרו באופן מיידי.</li>
+    <li>במקרים הנדרשים לפי חוק, נדווח לרשויות המתאימות.</li>
   </ul>
 
-  <h2>4. Reporting and Moderation</h2>
-  <p>Users can report concerning content or behavior from the app or by email:</p>
+  <h2>4. דיווחים ומודרציה</h2>
+  <p>ניתן לדווח על תוכן או התנהגות בעייתיים דרך האפליקציה או במייל:</p>
   <p><a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a></p>
-  <p>Reports are reviewed promptly and we take moderation actions as needed.</p>
+  <p>אנו בודקים דיווחים במהירות ומבצעים פעולות אכיפה לפי הצורך.</p>
 
-  <h2>5. Legal Compliance</h2>
-  <p>We comply with applicable child protection laws and cooperate with relevant authorities and organizations when required.</p>
+  <h2>5. עמידה בדרישות החוק</h2>
+  <p>אנו פועלים בהתאם לחוקים החלים בנושא בטיחות ילדים ומשתפים פעולה עם הרשויות והגופים הרלוונטיים בעת הצורך.</p>
 
-  <h2>6. Contact</h2>
-  <p>For child safety inquiries:</p>
+  <h2>6. יצירת קשר</h2>
+  <p>לפניות בנושא בטיחות ילדים:</p>
   <p><a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a></p>
 </main>
 
 <footer>
   &copy; 2026 OtherTreasure &nbsp;|&nbsp;
-  <a href="privacy-policy.html?lang=en">Privacy Policy</a> &nbsp;|&nbsp;
-  <a href="terms.html?lang=en">Terms of Service</a> &nbsp;|&nbsp;
-  <a href="data-deletion.html?lang=en">Data Deletion</a>
+  <a href="privacy-policy_he.html?lang=he">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="terms_he.html?lang=he">Terms of Service</a> &nbsp;|&nbsp;
+  <a href="data-deletion_he.html?lang=he">Data Deletion</a>
 </footer>
-
-<script>
-  (function () {
-    var params = new URLSearchParams(window.location.search);
-    if (params.has('lang')) {
-      return;
-    }
-    var lang = (navigator.language || '').toLowerCase();
-    var file = 'child-safety.html';
-    if (lang.indexOf('es') === 0) file = 'child-safety_es.html';
-    else if (lang.indexOf('he') === 0) file = 'child-safety_he.html';
-    else if (lang.indexOf('ar') === 0) file = 'child-safety_ar.html';
-    else if (lang.indexOf('ru') === 0) file = 'child-safety_ru.html';
-    else if (lang.indexOf('fr') === 0) file = 'child-safety_fr.html';
-    if (file !== 'child-safety.html' && !window.location.pathname.endsWith('/' + file)) {
-      window.location.replace(file + '?lang=' + lang.slice(0, 2));
-    }
-  })();
-</script>
 </body>
 </html>

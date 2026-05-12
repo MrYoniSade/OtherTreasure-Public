@@ -3,106 +3,641 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OtherTreasure</title>
+  <title>OtherTreasure - Share More, Waste Less</title>
+  <meta name="description" content="OtherTreasure helps neighbors give away useful items for free and reduce waste together." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700;800&family=Noto+Sans+Hebrew:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-1: #fff8ef;
+      --bg-2: #ecf6ec;
+      --ink: #16231b;
+      --muted: #53675d;
+      --brand: #1f7a48;
+      --brand-dark: #0d5a32;
+      --panel: rgba(255, 255, 255, 0.78);
+      --line: #cfe2d0;
+      --cta: #ff9a3c;
+      --cta-dark: #de7920;
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --shadow: 0 20px 50px rgba(15, 41, 24, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f9f9f9;
-      color: #1a1a1a;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", "Noto Sans Hebrew", "Noto Naskh Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(255, 166, 77, 0.24) 0, rgba(255, 166, 77, 0) 36%),
+        radial-gradient(circle at 15% 80%, rgba(31, 122, 72, 0.20) 0, rgba(31, 122, 72, 0) 42%),
+        linear-gradient(155deg, var(--bg-1) 0%, var(--bg-2) 100%);
       min-height: 100vh;
+      text-align: start;
+    }
+
+    .shell {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: clamp(1rem, 3vw, 2.2rem);
+    }
+
+    .hero {
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(1rem, 3vw, 2.3rem);
+      animation: rise-in 620ms ease-out both;
+    }
+
+    .topbar {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.4rem;
     }
-    .logo-wrap {
-      width: 100px;
-      height: 100px;
-      border-radius: 22px;
-      background: #2e7d32;
+
+    .brand {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .brand-badge {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(140deg, var(--brand) 0%, #2d995d 100%);
+      box-shadow: 0 8px 20px rgba(31, 122, 72, 0.35);
+    }
+
+    .brand-badge svg { width: 32px; height: 32px; fill: #fff; }
+
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 12px;
+      display: none;
+      background: transparent;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2.6vw, 2rem);
+      letter-spacing: -0.4px;
+      color: var(--brand-dark);
+    }
+
+    .language {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      box-shadow: 0 4px 20px rgba(46,125,50,0.25);
+      gap: 0.45rem;
     }
-    .logo-wrap svg { width: 56px; height: 56px; fill: #fff; }
-    h1 { font-size: 2rem; font-weight: 800; color: #1b5e20; letter-spacing: -0.5px; }
-    p.tagline {
-      margin-top: 10px;
-      font-size: 1.05rem;
-      color: #555;
-      max-width: 360px;
+
+    .language label {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 700;
     }
-    .links {
-      margin-top: 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-      max-width: 320px;
-    }
-    .links a {
-      display: block;
-      padding: 14px 20px;
-      border-radius: 10px;
-      border: 1px solid #c8e6c9;
+
+    .language select {
+      border: 1px solid var(--line);
+      border-radius: 999px;
       background: #fff;
-      color: #2e7d32;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 600;
-      transition: background 0.15s;
+      padding: 0.45rem 0.8rem;
+      font-weight: 700;
+      color: var(--ink);
+      min-width: 150px;
+      cursor: pointer;
     }
-    .links a:hover { background: #e8f5e9; }
-    footer {
-      margin-top: 60px;
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(1rem, 2.6vw, 1.8rem);
+      align-items: stretch;
+    }
+
+    .copy h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 3.6vw, 2.6rem);
+      line-height: 1.12;
+      letter-spacing: -0.8px;
+      color: #174e2f;
+      text-wrap: balance;
+      text-align: start;
+    }
+
+    .copy p {
+      margin: 0.8rem 0 0;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: clamp(0.96rem, 1.5vw, 1.08rem);
+      line-height: 1.62;
+      text-align: start;
+    }
+
+    .cta-row {
+      margin-top: 1.1rem;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 0.72rem 0.95rem;
+      font-weight: 800;
+      transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+    }
+
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(140deg, var(--cta) 0%, var(--cta-dark) 100%);
+      box-shadow: 0 12px 24px rgba(222, 121, 32, 0.32);
+    }
+
+    .btn-secondary {
+      color: var(--brand-dark);
+      background: #fff;
+      border-color: var(--line);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+      animation: fade-up 700ms ease-out both;
+      animation-delay: 120ms;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+      display: grid;
+      gap: 0.45rem;
+      align-content: start;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 0.96rem;
+      color: #1b6038;
+      text-align: center;
+    }
+
+    .qr {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      border: 1px dashed #90be98;
+      background: #f7fbf8;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tiny {
+      margin: 0;
+      text-align: center;
       font-size: 0.78rem;
-      color: #aaa;
+      color: #688176;
+    }
+
+    .support-grid {
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      animation: fade-up 760ms ease-out both;
+      animation-delay: 220ms;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 0.92rem;
+    }
+
+    .panel h4 {
+      margin: 0 0 0.45rem;
+      font-size: 0.94rem;
+      color: #1b6038;
+      text-align: start;
+    }
+
+    .panel h4::after {
+      content: "____";
+      display: block;
+      line-height: 0.7;
+      letter-spacing: 0.08em;
+      color: #1b6038;
+      opacity: 0.75;
+      margin-top: 0.15rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .links a {
+      color: #1a4c31;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: start;
+    }
+
+    .links a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 1.3rem;
+      text-align: center;
+      color: #6a7f74;
+      font-size: 0.82rem;
+    }
+
+    html[dir="rtl"] .language {
+      flex-direction: row-reverse;
+    }
+
+    html[dir="rtl"] .cta-row {
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 980px) {
+      .hero-content { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .support-grid { grid-template-columns: 1fr; }
+    }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <div class="shell">
+    <section class="hero">
+      <div class="topbar">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true">
+            <img id="brandLogo" class="brand-logo" src="logo.png" alt="OtherTreasure logo" />
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 8h14a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1zm7 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM4 8V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2H4z"/>
+            </svg>
+          </div>
+          <h1>OtherTreasure</h1>
+        </div>
 
-  <div class="logo-wrap">
-    <!-- treasure chest icon -->
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 8h14a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1zm7 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM4 8V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2H4z"/>
-    </svg>
+        <div class="language">
+          <label for="langSelect" id="langLabel">Language</label>
+          <select id="langSelect" aria-labelledby="langLabel">
+            <option value="en">English</option>
+            <option value="es">Espanol</option>
+            <option value="he">עברית</option>
+            <option value="ar">العربية</option>
+            <option value="ru">Русский</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="copy">
+          <h2 id="headline">Give useful things a second life.</h2>
+          <p id="tagline">OtherTreasure helps neighbors share free items, reduce waste, and find exactly what they need nearby.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" id="openDownload" href="download.html">Download App</a>
+            <a class="btn btn-secondary" id="openWebsite" href="https://othertreasure.app" target="_blank" rel="noopener noreferrer">App Website</a>
+          </div>
+        </div>
+
+        <div class="cards" aria-label="Download QR codes">
+          <article class="card">
+            <h3 id="qrGoogleTitle">Google Play</h3>
+            <img id="qrGoogle" class="qr" alt="QR code for Google Play" />
+            <p class="tiny" id="scanGoogle">Scan to install on Android</p>
+          </article>
+          <article class="card">
+            <h3 id="qrAppleTitle">App Store</h3>
+            <img id="qrApple" class="qr" alt="QR code for App Store" />
+            <p class="tiny" id="scanApple">Scan to install on iPhone</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="support-grid">
+        <section class="panel">
+          <h4 id="legalTitle">Legal Documents</h4>
+          <ul class="links">
+            <li><a id="privacyLink" data-doc="privacy-policy" href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a id="termsLink" data-doc="terms" href="terms.html">Terms of Service</a></li>
+            <li><a id="deletionLink" data-doc="data-deletion" href="data-deletion.html">Data Deletion</a></li>
+            <li><a id="childSafetyLink" href="child-safety.html">Child Safety</a></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h4 id="socialTitle">Community</h4>
+          <ul class="links">
+            <li><a id="facebookLink" href="https://facebook.com/othertreasure" target="_blank" rel="noopener noreferrer">Facebook Page</a></li>
+          </ul>
+        </section>
+      </div>
+
+      <footer id="footerText">&copy; 2026 OtherTreasure. Building local sharing communities.</footer>
+    </section>
   </div>
-
-  <h1>OtherTreasure</h1>
-  <p class="tagline">Save our planet and find a fortune.<br>Give away items you no longer need.</p>
-
-  <div class="links">
-    <a href="privacy-policy.html?lang=en" data-legal-link="privacy-policy">Privacy Policy</a>
-    <a href="terms.html?lang=en" data-legal-link="terms">Terms of Service</a>
-    <a href="data-deletion.html?lang=en" data-legal-link="data-deletion">Data Deletion Request</a>
-  </div>
-
-  <footer>&copy; 2026 OtherTreasure</footer>
 
   <script>
-    (function () {
-      var lang = (navigator.language || '').toLowerCase();
-      var suffix = '';
-      if (lang.indexOf('es') === 0) suffix = '_es';
-      else if (lang.indexOf('he') === 0) suffix = '_he';
-      else if (lang.indexOf('ar') === 0) suffix = '_ar';
-      else if (lang.indexOf('ru') === 0) suffix = '_ru';
+    var GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.yonis.othertreasure';
+    var APPLE_APP_STORE_URL = 'https://apps.apple.com/app/id0000000000';
+    var APP_WEBSITE_URL = 'https://othertreasure.app';
+    var FACEBOOK_PAGE_URL = 'https://facebook.com/othertreasure';
 
-      var links = document.querySelectorAll('[data-legal-link]');
-      links.forEach(function (link) {
-        var page = link.getAttribute('data-legal-link');
-        var langCode = suffix ? suffix.slice(1) : 'en';
-        var target = suffix ? page + suffix + '.html' : page + '.html';
-        link.setAttribute('href', target + '?lang=' + langCode);
+    var DOC_SUFFIX = {
+      en: '',
+      es: '_es',
+      he: '_he',
+      ar: '_ar',
+      ru: '_ru',
+      fr: ''
+    };
+
+    var LANG_STORAGE_KEY = 'ot_public_lang';
+
+    var CONTENT = {
+      en: {
+        languageLabel: 'Language',
+        headline: 'Give useful things a second life.',
+        tagline: 'OtherTreasure helps neighbors share free items, reduce waste, and find exactly what they need nearby.',
+        download: 'Download App',
+        website: 'App Website',
+        legalTitle: 'Legal Documents',
+        privacy: 'Privacy Policy',
+        terms: 'Terms of Service',
+        deletion: 'Data Deletion',
+        childSafety: 'Child Safety',
+        socialTitle: 'Community',
+        facebook: 'Facebook Page',
+        instagram: 'Instagram',
+        contact: 'Contact Support',
+        ideasTitle: 'Next Ideas',
+        ideas: ['Press kit and app screenshots', 'FAQ and safety tips page', 'User testimonials section'],
+        qrGoogleTitle: 'Google Play',
+        qrAppleTitle: 'App Store',
+        scanGoogle: 'Scan to install on Android',
+        scanApple: 'Scan to install on iPhone',
+        footer: '&copy; 2026 OtherTreasure. Building local sharing communities.'
+      },
+      es: {
+        languageLabel: 'Idioma',
+        headline: 'Dale una segunda vida a los objetos utiles.',
+        tagline: 'OtherTreasure ayuda a los vecinos a compartir articulos gratis, reducir residuos y encontrar lo que necesitan cerca.',
+        download: 'Descargar app',
+        website: 'Sitio web de la app',
+        legalTitle: 'Documentos legales',
+        privacy: 'Politica de privacidad',
+        terms: 'Terminos de servicio',
+        deletion: 'Eliminacion de datos',
+        childSafety: 'Seguridad infantil',
+        socialTitle: 'Comunidad',
+        facebook: 'Pagina de Facebook',
+        instagram: 'Instagram',
+        contact: 'Contactar soporte',
+        ideasTitle: 'Proximas ideas',
+        ideas: ['Kit de prensa y capturas de la app', 'Pagina de preguntas frecuentes y seguridad', 'Seccion de testimonios'],
+        qrGoogleTitle: 'Google Play',
+        qrAppleTitle: 'App Store',
+        scanGoogle: 'Escanea para instalar en Android',
+        scanApple: 'Escanea para instalar en iPhone',
+        footer: '&copy; 2026 OtherTreasure. Construyendo comunidades locales de intercambio.'
+      },
+      he: {
+        languageLabel: 'שפה',
+        headline: 'תנו לדברים שימושיים חיים שניים.',
+        tagline: 'OtherTreasure עוזרת לשכנים לשתף פריטים בחינם, להפחית פסולת ולמצוא בדיוק מה שצריך קרוב לבית.',
+        download: 'הורדת האפליקציה',
+        website: 'אתר האפליקציה',
+        legalTitle: 'מסמכים משפטיים',
+        privacy: 'מדיניות פרטיות',
+        terms: 'תנאי שימוש',
+        deletion: 'מחיקת נתונים',
+        childSafety: 'בטיחות ילדים',
+        socialTitle: 'קהילה',
+        facebook: 'דף פייסבוק',
+        instagram: 'Instagram',
+        contact: 'יצירת קשר עם התמיכה',
+        ideasTitle: 'רעיונות להמשך',
+        ideas: ['ערכת עיתונות וצילומי מסך', 'עמוד שאלות נפוצות וטיפים לבטיחות', 'מדור המלצות משתמשים'],
+        qrGoogleTitle: 'Google Play',
+        qrAppleTitle: 'App Store',
+        scanGoogle: 'סרקו להתקנה באנדרואיד',
+        scanApple: 'סרקו להתקנה באייפון',
+        footer: '&copy; 2026 OtherTreasure. בונים קהילות שיתוף מקומיות.'
+      },
+      ar: {
+        languageLabel: 'اللغة',
+        headline: 'امنحوا الاشياء المفيدة حياة ثانية.',
+        tagline: 'يساعد OtherTreasure الجيران على مشاركة الاغراض المجانية وتقليل الهدر والعثور على ما يحتاجونه بالقرب منهم.',
+        download: 'تنزيل التطبيق',
+        website: 'موقع التطبيق',
+        legalTitle: 'المستندات القانونية',
+        privacy: 'سياسة الخصوصية',
+        terms: 'شروط الخدمة',
+        deletion: 'حذف البيانات',
+        childSafety: 'سلامة الاطفال',
+        socialTitle: 'المجتمع',
+        facebook: 'صفحة فيسبوك',
+        instagram: 'Instagram',
+        contact: 'التواصل مع الدعم',
+        ideasTitle: 'افكار لاحقة',
+        ideas: ['حزمة صحفية وصور للتطبيق', 'صفحة اسئلة شائعة ونصائح السلامة', 'قسم شهادات المستخدمين'],
+        qrGoogleTitle: 'Google Play',
+        qrAppleTitle: 'App Store',
+        scanGoogle: 'امسح للتثبيت على Android',
+        scanApple: 'امسح للتثبيت على iPhone',
+        footer: '&copy; 2026 OtherTreasure. نبني مجتمعات مشاركة محلية.'
+      },
+      ru: {
+        languageLabel: 'Язык',
+        headline: 'Дайте полезным вещам вторую жизнь.',
+        tagline: 'OtherTreasure помогает соседям делиться бесплатными вещами, сокращать отходы и находить нужное рядом.',
+        download: 'Скачать приложение',
+        website: 'Сайт приложения',
+        legalTitle: 'Юридические документы',
+        privacy: 'Политика конфиденциальности',
+        terms: 'Условия использования',
+        deletion: 'Удаление данных',
+        childSafety: 'Безопасность детей',
+        socialTitle: 'Сообщество',
+        facebook: 'Страница Facebook',
+        instagram: 'Instagram',
+        contact: 'Связаться с поддержкой',
+        ideasTitle: 'Следующие идеи',
+        ideas: ['Пресс-кит и скриншоты приложения', 'Страница FAQ и советы по безопасности', 'Раздел с отзывами пользователей'],
+        qrGoogleTitle: 'Google Play',
+        qrAppleTitle: 'App Store',
+        scanGoogle: 'Сканируйте для установки на Android',
+        scanApple: 'Сканируйте для установки на iPhone',
+        footer: '&copy; 2026 OtherTreasure. Создаем локальные сообщества обмена.'
+      },
+      fr: {
+        languageLabel: 'Langue',
+        headline: 'Donnez une seconde vie aux objets utiles.',
+        tagline: 'OtherTreasure aide les voisins a partager des objets gratuits, reduire le gaspillage et trouver ce dont ils ont besoin.',
+        download: 'Telecharger l\'app',
+        website: 'Site de l\'application',
+        legalTitle: 'Documents legaux',
+        privacy: 'Politique de confidentialite',
+        terms: 'Conditions d\'utilisation',
+        deletion: 'Suppression des donnees',
+        childSafety: 'Protection des enfants',
+        socialTitle: 'Communaute',
+        facebook: 'Page Facebook',
+        instagram: 'Instagram',
+        contact: 'Contacter le support',
+        ideasTitle: 'Idees a venir',
+        ideas: ['Kit presse et captures de l\'app', 'Page FAQ et conseils de securite', 'Section de temoignages'],
+        qrGoogleTitle: 'Google Play',
+        qrAppleTitle: 'App Store',
+        scanGoogle: 'Scannez pour installer sur Android',
+        scanApple: 'Scannez pour installer sur iPhone',
+        footer: '&copy; 2026 OtherTreasure. Construire des communautes locales de partage.'
+      }
+    };
+
+    function detectLang() {
+      var params = new URLSearchParams(window.location.search);
+      var byQuery = (params.get('lang') || '').toLowerCase();
+      if (CONTENT[byQuery]) return byQuery;
+      var byStorage = (localStorage.getItem(LANG_STORAGE_KEY) || '').toLowerCase();
+      if (CONTENT[byStorage]) return byStorage;
+      var nav = (navigator.language || 'en').toLowerCase();
+      var short = nav.slice(0, 2);
+      return CONTENT[short] ? short : 'en';
+    }
+
+    function docHref(base, lang) {
+      var suffix = DOC_SUFFIX[lang] || '';
+      return suffix ? base + suffix + '.html?lang=' + lang : base + '.html?lang=' + lang;
+    }
+
+    function setText(id, value) {
+      var el = document.getElementById(id);
+      if (el) {
+        el.textContent = value;
+      }
+    }
+
+    function applyLang(lang) {
+      var t = CONTENT[lang] || CONTENT.en;
+      document.documentElement.lang = lang;
+
+      setText('langLabel', t.languageLabel);
+      setText('headline', t.headline);
+      setText('tagline', t.tagline);
+      setText('openDownload', t.download);
+      setText('openWebsite', t.website);
+      setText('legalTitle', t.legalTitle);
+      setText('privacyLink', t.privacy);
+      setText('termsLink', t.terms);
+      setText('deletionLink', t.deletion);
+      setText('childSafetyLink', t.childSafety);
+      setText('socialTitle', t.socialTitle);
+      setText('facebookLink', t.facebook);
+      setText('qrGoogleTitle', t.qrGoogleTitle);
+      setText('qrAppleTitle', t.qrAppleTitle);
+      setText('scanGoogle', t.scanGoogle);
+      setText('scanApple', t.scanApple);
+      document.getElementById('footerText').innerHTML = t.footer;
+
+      document.getElementById('privacyLink').href = docHref('privacy-policy', lang);
+      document.getElementById('termsLink').href = docHref('terms', lang);
+      document.getElementById('deletionLink').href = docHref('data-deletion', lang);
+      document.getElementById('childSafetyLink').href = docHref('child-safety', lang);
+
+      var dir = (lang === 'he' || lang === 'ar') ? 'rtl' : 'ltr';
+      document.documentElement.dir = dir;
+    }
+
+    function qrSrc(url) {
+      return 'https://api.qrserver.com/v1/create-qr-code/?size=360x360&data=' + encodeURIComponent(url);
+    }
+
+    (function init() {
+      var brandLogo = document.getElementById('brandLogo');
+      var fallbackIcon = document.querySelector('.brand-badge svg');
+      brandLogo.addEventListener('load', function () {
+        brandLogo.style.display = 'block';
+        fallbackIcon.style.display = 'none';
+      });
+
+      document.getElementById('openDownload').href = 'download.html';
+      document.getElementById('openWebsite').href = APP_WEBSITE_URL;
+      document.getElementById('facebookLink').href = FACEBOOK_PAGE_URL;
+
+      document.getElementById('qrGoogle').src = qrSrc(GOOGLE_PLAY_URL);
+      document.getElementById('qrApple').src = qrSrc(APPLE_APP_STORE_URL);
+
+      var select = document.getElementById('langSelect');
+      var initial = detectLang();
+      select.value = initial;
+      applyLang(initial);
+
+      select.addEventListener('change', function () {
+        var chosen = select.value;
+        localStorage.setItem(LANG_STORAGE_KEY, chosen);
+        applyLang(chosen);
+      });
+
+      window.addEventListener('pageshow', function () {
+        var chosen = (localStorage.getItem(LANG_STORAGE_KEY) || select.value || 'en').toLowerCase();
+        if (!CONTENT[chosen]) {
+          chosen = 'en';
+        }
+        select.value = chosen;
+        applyLang(chosen);
       });
     })();
   </script>
-
 </body>
 </html>
