@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal & Privacy - OtherTreasure</title>
+  <meta
+    name="description"
+    content="Review OtherTreasure's legal documents, including the Privacy Policy, Terms of Service, and Data Deletion information."
+  />
+  <style>
+    :root {
+      --bg: #f6faf8;
+      --panel: #ffffff;
+      --ink: #17342a;
+      --muted: #5c7367;
+      --brand: #1b7a7a;
+      --brand-dark: #135b5b;
+      --line: #d6e6df;
+      --soft: #edf7f3;
+      --shadow: 0 18px 48px rgba(20, 66, 52, 0.12);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(27, 122, 122, 0.12), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(45, 153, 93, 0.10), transparent 32%),
+        linear-gradient(180deg, #fbfefd 0%, var(--bg) 100%);
+    }
+
+    a { color: var(--brand-dark); }
+
+    .shell {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 20px 56px;
+    }
+
+    .hero {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(214, 230, 223, 0.9);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 40px);
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #b8d9d4;
+      background: #eff8f6;
+      color: var(--brand-dark);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .lang {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .lang select {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.9fr);
+      gap: 24px;
+      margin-top: 18px;
+      align-items: start;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #153a2e;
+    }
+
+    .lead {
+      margin: 14px 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .quick-list {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .quick-list li + li {
+      margin-top: 8px;
+    }
+
+    .summary {
+      background: linear-gradient(180deg, #f6fbf9 0%, #ffffff 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 22px;
+    }
+
+    .summary h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--brand-dark);
+    }
+
+    .summary p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .summary-links {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .summary-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: #fff;
+      font-weight: 700;
+    }
+
+    .summary-link span:last-child {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin: 0;
+      color: var(--brand-dark);
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      min-height: 110px;
+    }
+
+    .card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .support {
+      margin-top: 18px;
+      padding: 18px 20px;
+      background: var(--soft);
+      border: 1px solid #d5e7df;
+      border-radius: var(--radius-md);
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .support strong {
+      color: var(--ink);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    html[dir="rtl"] .lang {
+      flex-direction: row-reverse;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .card p { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="topbar">
+        <div class="eyebrow" id="eyebrow">Legal and privacy center</div>
+        <label class="lang" for="langSelect">
+          <span id="langLabel">Language</span>
+          <select id="langSelect">
+            <option value="en">English</option>
+            <option value="es">Espanol</option>
+            <option value="he">Hebrew</option>
+            <option value="ar">Arabic</option>
+            <option value="ru">Russian</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <h1 id="title">Legal & Privacy</h1>
+          <p class="lead" id="lead">
+            This page summarizes the main legal documents for OtherTreasure and links to the full text of each one.
+          </p>
+          <ul class="quick-list" id="quickList">
+            <li>Privacy Policy: what data we collect, how we use it, and your privacy choices.</li>
+            <li>Terms of Service: the rules for using the app and your responsibilities as a user.</li>
+            <li>Data Deletion: how to delete your account and request removal of your data.</li>
+          </ul>
+        </div>
+
+        <aside class="summary">
+          <h2 id="summaryTitle">Quick access</h2>
+          <p id="summaryBody">
+            Choose a document below. The links on this page update to match the selected language when translations are available.
+          </p>
+          <div class="summary-links">
+            <a class="summary-link" id="summaryPrivacy" href="privacy-policy.html">
+              <span id="summaryPrivacyLabel">Privacy Policy</span>
+              <span id="summaryPrivacyAction">Open</span>
+            </a>
+            <a class="summary-link" id="summaryTerms" href="terms.html">
+              <span id="summaryTermsLabel">Terms of Service</span>
+              <span id="summaryTermsAction">Open</span>
+            </a>
+            <a class="summary-link" id="summaryDeletion" href="data-deletion.html">
+              <span id="summaryDeletionLabel">Data Deletion</span>
+              <span id="summaryDeletionAction">Open</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3 id="privacyTitle">Privacy Policy</h3>
+          <p id="privacyBody">
+            Learn what information OtherTreasure collects, how it is protected, and how it is used to operate the service.
+          </p>
+          <a id="privacyLink" href="privacy-policy.html">Open Privacy Policy</a>
+        </article>
+
+        <article class="card">
+          <h3 id="termsTitle">Terms of Service</h3>
+          <p id="termsBody">
+            Review the core terms that govern access to the app, acceptable use, account responsibilities, and service limitations.
+          </p>
+          <a id="termsLink" href="terms.html">Open Terms of Service</a>
+        </article>
+
+        <article class="card">
+          <h3 id="deletionTitle">Data Deletion</h3>
+          <p id="deletionBody">
+            See the available ways to delete your account, remove data from the service, and contact support for deletion help.
+          </p>
+          <a id="deletionLink" href="data-deletion.html">Open Data Deletion</a>
+        </article>
+      </div>
+
+      <section class="support" id="supportText">
+        <strong>Need help?</strong> If you have legal or privacy questions, contact
+        <a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a>.
+      </section>
+
+      <div class="footer">
+        <span id="footerText">OtherTreasure legal documents are hosted on this public site for direct access from the app.</span>
+        <a id="homeLink" href="../index.html">Back to home</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    var DOC_SUFFIX = {
+      en: '',
+      es: '_es',
+      he: '_he',
+      ar: '_ar',
+      ru: '_ru'
+    };
+
+    var CONTENT = {
+      en: {
+        dir: 'ltr',
+        htmlLang: 'en',
+        eyebrow: 'Legal and privacy center',
+        language: 'Language',
+        title: 'Legal & Privacy',
+        lead: 'This page summarizes the main legal documents for OtherTreasure and links to the full text of each one.',
+        quick: [
+          'Privacy Policy: what data we collect, how we use it, and your privacy choices.',
+          'Terms of Service: the rules for using the app and your responsibilities as a user.',
+          'Data Deletion: how to delete your account and request removal of your data.'
+        ],
+        summaryTitle: 'Quick access',
+        summaryBody: 'Choose a document below. The links on this page update to match the selected language when translations are available.',
+        privacyTitle: 'Privacy Policy',
+        privacyBody: 'Learn what information OtherTreasure collects, how it is protected, and how it is used to operate the service.',
+        privacyLink: 'Open Privacy Policy',
+        termsTitle: 'Terms of Service',
+        termsBody: 'Review the core terms that govern access to the app, acceptable use, account responsibilities, and service limitations.',
+        termsLink: 'Open Terms of Service',
+        deletionTitle: 'Data Deletion',
+        deletionBody: 'See the available ways to delete your account, remove data from the service, and contact support for deletion help.',
+        deletionLink: 'Open Data Deletion',
+        open: 'Open',
+        support: 'Need help? If you have legal or privacy questions, contact',
+        footer: 'OtherTreasure legal documents are hosted on this public site for direct access from the app.',
+        home: 'Back to home'
+      },
+      es: {
+        dir: 'ltr',
+        htmlLang: 'es',
+        eyebrow: 'Centro legal y de privacidad',
+        language: 'Idioma',
+        title: 'Legal y privacidad',
+        lead: 'Esta pagina resume los principales documentos legales de OtherTreasure y enlaza al texto completo de cada uno.',
+        quick: [
+          'Politica de privacidad: que datos recopilamos, como los usamos y tus opciones de privacidad.',
+          'Terminos de servicio: las reglas para usar la app y tus responsabilidades como usuario.',
+          'Eliminacion de datos: como eliminar tu cuenta y solicitar la eliminacion de tus datos.'
+        ],
+        summaryTitle: 'Acceso rapido',
+        summaryBody: 'Elige un documento. Los enlaces de esta pagina se actualizan segun el idioma seleccionado cuando hay traducciones disponibles.',
+        privacyTitle: 'Politica de privacidad',
+        privacyBody: 'Consulta que informacion recopila OtherTreasure, como se protege y como se usa para operar el servicio.',
+        privacyLink: 'Abrir politica de privacidad',
+        termsTitle: 'Terminos de servicio',
+        termsBody: 'Revisa los terminos principales que regulan el acceso a la app, el uso aceptable, la responsabilidad de la cuenta y las limitaciones del servicio.',
+        termsLink: 'Abrir terminos de servicio',
+        deletionTitle: 'Eliminacion de datos',
+        deletionBody: 'Consulta las opciones disponibles para eliminar tu cuenta, quitar datos del servicio y contactar con soporte para ayuda.',
+        deletionLink: 'Abrir eliminacion de datos',
+        open: 'Abrir',
+        support: 'Necesitas ayuda? Si tienes preguntas legales o de privacidad, escribe a',
+        footer: 'Los documentos legales de OtherTreasure estan alojados en este sitio publico para acceso directo desde la app.',
+        home: 'Volver al inicio'
+      },
+      he: {
+        dir: 'rtl',
+        htmlLang: 'he',
+        eyebrow: 'מרכז משפטי ופרטיות',
+        language: 'שפה',
+        title: 'משפטי ופרטיות',
+        lead: 'עמוד זה מסכם את המסמכים המשפטיים המרכזיים של OtherTreasure ומקשר לטקסט המלא של כל אחד מהם.',
+        quick: [
+          'מדיניות פרטיות: איזה מידע אנחנו אוספים, איך אנחנו משתמשים בו ואילו אפשרויות פרטיות עומדות לרשותכם.',
+          'תנאי שימוש: הכללים לשימוש באפליקציה והאחריות שלכם כמשתמשים.',
+          'מחיקת נתונים: איך למחוק את החשבון שלכם ולבקש הסרה של הנתונים שלכם.'
+        ],
+        summaryTitle: 'גישה מהירה',
+        summaryBody: 'בחרו מסמך. הקישורים בעמוד זה מתעדכנים לפי השפה שנבחרה כאשר קיימים תרגומים זמינים.',
+        privacyTitle: 'מדיניות פרטיות',
+        privacyBody: 'כאן תוכלו לראות איזה מידע OtherTreasure אוספת, איך הוא מוגן ואיך משתמשים בו כדי להפעיל את השירות.',
+        privacyLink: 'פתיחת מדיניות הפרטיות',
+        termsTitle: 'תנאי שימוש',
+        termsBody: 'עיינו בתנאים המרכזיים שמסדירים גישה לאפליקציה, שימוש מותר, אחריות על החשבון ומגבלות השירות.',
+        termsLink: 'פתיחת תנאי השימוש',
+        deletionTitle: 'מחיקת נתונים',
+        deletionBody: 'ראו את הדרכים הזמינות למחיקת החשבון, להסרת נתונים מהשירות ולפניה לתמיכה בנושא מחיקה.',
+        deletionLink: 'פתיחת מחיקת נתונים',
+        open: 'פתיחה',
+        support: 'צריכים עזרה? אם יש לכם שאלות משפטיות או שאלות על פרטיות, צרו קשר עם',
+        footer: 'המסמכים המשפטיים של OtherTreasure מתארחים באתר הציבורי הזה כדי לאפשר גישה ישירה מהאפליקציה.',
+        home: 'חזרה לדף הבית'
+      },
+      ar: {
+        dir: 'rtl',
+        htmlLang: 'ar',
+        eyebrow: 'مركز الشؤون القانونية والخصوصية',
+        language: 'اللغة',
+        title: 'القانون والخصوصية',
+        lead: 'تلخص هذه الصفحة المستندات القانونية الرئيسية في OtherTreasure وتوفر رابطا للنص الكامل لكل مستند.',
+        quick: [
+          'سياسة الخصوصية: ما البيانات التي نجمعها وكيف نستخدمها وما هي خيارات الخصوصية المتاحة لكم.',
+          'شروط الخدمة: القواعد الخاصة باستخدام التطبيق ومسؤولياتكم كمستخدمين.',
+          'حذف البيانات: كيفية حذف الحساب وطلب إزالة البيانات الخاصة بكم.'
+        ],
+        summaryTitle: 'وصول سريع',
+        summaryBody: 'اختاروا المستند المطلوب. يتم تحديث الروابط في هذه الصفحة لتطابق اللغة المحددة عندما تكون الترجمات متاحة.',
+        privacyTitle: 'سياسة الخصوصية',
+        privacyBody: 'تعرفوا على المعلومات التي يجمعها OtherTreasure وكيف نحميها وكيف نستخدمها لتشغيل الخدمة.',
+        privacyLink: 'فتح سياسة الخصوصية',
+        termsTitle: 'شروط الخدمة',
+        termsBody: 'راجعوا الشروط الرئيسية التي تنظم الوصول إلى التطبيق والاستخدام المقبول ومسؤوليات الحساب وحدود الخدمة.',
+        termsLink: 'فتح شروط الخدمة',
+        deletionTitle: 'حذف البيانات',
+        deletionBody: 'اطلعوا على الطرق المتاحة لحذف الحساب وإزالة البيانات من الخدمة والتواصل مع الدعم للمساعدة.',
+        deletionLink: 'فتح حذف البيانات',
+        open: 'فتح',
+        support: 'هل تحتاجون إلى مساعدة؟ إذا كانت لديكم اسئلة قانونية او متعلقة بالخصوصية، تواصلوا مع',
+        footer: 'تتم استضافة المستندات القانونية الخاصة بـ OtherTreasure على هذا الموقع العام لتكون متاحة مباشرة من التطبيق.',
+        home: 'العودة الى الصفحة الرئيسية'
+      },
+      ru: {
+        dir: 'ltr',
+        htmlLang: 'ru',
+        eyebrow: 'Центр юридической информации и конфиденциальности',
+        language: 'Язык',
+        title: 'Юридическая информация и конфиденциальность',
+        lead: 'На этой странице кратко описаны основные юридические документы OtherTreasure и даны ссылки на полный текст каждого из них.',
+        quick: [
+          'Политика конфиденциальности: какие данные мы собираем, как используем их и какие у вас есть варианты выбора.',
+          'Условия использования: правила работы с приложением и ваши обязанности как пользователя.',
+          'Удаление данных: как удалить аккаунт и запросить удаление ваших данных.'
+        ],
+        summaryTitle: 'Быстрый доступ',
+        summaryBody: 'Выберите документ ниже. Ссылки на этой странице обновляются в соответствии с выбранным языком, если перевод доступен.',
+        privacyTitle: 'Политика конфиденциальности',
+        privacyBody: 'Узнайте, какую информацию собирает OtherTreasure, как она защищена и как используется для работы сервиса.',
+        privacyLink: 'Открыть политику конфиденциальности',
+        termsTitle: 'Условия использования',
+        termsBody: 'Ознакомьтесь с основными условиями, которые регулируют доступ к приложению, допустимое использование, ответственность за аккаунт и ограничения сервиса.',
+        termsLink: 'Открыть условия использования',
+        deletionTitle: 'Удаление данных',
+        deletionBody: 'Посмотрите доступные способы удаления аккаунта, удаления данных из сервиса и обращения в поддержку за помощью.',
+        deletionLink: 'Открыть удаление данных',
+        open: 'Открыть',
+        support: 'Нужна помощь? Если у вас есть юридические вопросы или вопросы о конфиденциальности, напишите на',
+        footer: 'Юридические документы OtherTreasure размещены на этом публичном сайте для прямого доступа из приложения.',
+        home: 'Вернуться на главную'
+      }
+    };
+
+    var langSelect = document.getElementById('langSelect');
+
+    function resolveLanguage() {
+      var params = new URLSearchParams(window.location.search);
+      var requested = params.get('lang');
+      if (requested && CONTENT[requested]) {
+        return requested;
+      }
+
+      var browserLang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+      return CONTENT[browserLang] ? browserLang : 'en';
+    }
+
+    function docHref(docName, language) {
+      var suffix = DOC_SUFFIX[language] || '';
+      return docName + suffix + '.html?lang=' + language;
+    }
+
+    function fillQuickList(items) {
+      var quickList = document.getElementById('quickList');
+      quickList.innerHTML = '';
+
+      items.forEach(function (item) {
+        var li = document.createElement('li');
+        li.textContent = item;
+        quickList.appendChild(li);
+      });
+    }
+
+    function applyContent(language) {
+      var content = CONTENT[language] || CONTENT.en;
+      document.documentElement.lang = content.htmlLang;
+      document.documentElement.dir = content.dir;
+      document.title = content.title + ' - OtherTreasure';
+
+      document.getElementById('eyebrow').textContent = content.eyebrow;
+      document.getElementById('langLabel').textContent = content.language;
+      document.getElementById('title').textContent = content.title;
+      document.getElementById('lead').textContent = content.lead;
+      document.getElementById('summaryTitle').textContent = content.summaryTitle;
+      document.getElementById('summaryBody').textContent = content.summaryBody;
+      document.getElementById('privacyTitle').textContent = content.privacyTitle;
+      document.getElementById('privacyBody').textContent = content.privacyBody;
+      document.getElementById('privacyLink').textContent = content.privacyLink;
+      document.getElementById('termsTitle').textContent = content.termsTitle;
+      document.getElementById('termsBody').textContent = content.termsBody;
+      document.getElementById('termsLink').textContent = content.termsLink;
+      document.getElementById('deletionTitle').textContent = content.deletionTitle;
+      document.getElementById('deletionBody').textContent = content.deletionBody;
+      document.getElementById('deletionLink').textContent = content.deletionLink;
+      document.getElementById('summaryPrivacyLabel').textContent = content.privacyTitle;
+      document.getElementById('summaryTermsLabel').textContent = content.termsTitle;
+      document.getElementById('summaryDeletionLabel').textContent = content.deletionTitle;
+      document.getElementById('summaryPrivacyAction').textContent = content.open;
+      document.getElementById('summaryTermsAction').textContent = content.open;
+      document.getElementById('summaryDeletionAction').textContent = content.open;
+      document.getElementById('supportText').innerHTML = '<strong>' + content.support + '</strong> <a href="mailto:othertreasuremarketing@gmail.com">othertreasuremarketing@gmail.com</a>.';
+      document.getElementById('footerText').textContent = content.footer;
+      document.getElementById('homeLink').textContent = content.home;
+
+      document.getElementById('summaryPrivacy').href = docHref('privacy-policy', language);
+      document.getElementById('summaryTerms').href = docHref('terms', language);
+      document.getElementById('summaryDeletion').href = docHref('data-deletion', language);
+      document.getElementById('privacyLink').href = docHref('privacy-policy', language);
+      document.getElementById('termsLink').href = docHref('terms', language);
+      document.getElementById('deletionLink').href = docHref('data-deletion', language);
+
+      fillQuickList(content.quick);
+      langSelect.value = language;
+
+      var params = new URLSearchParams(window.location.search);
+      params.set('lang', language);
+      window.history.replaceState({}, '', window.location.pathname + '?' + params.toString());
+    }
+
+    langSelect.addEventListener('change', function (event) {
+      applyContent(event.target.value);
+    });
+
+    applyContent(resolveLanguage());
+  </script>
+</body>
+</html>
