@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Печатный флаер A4 для дома - OtherTreasure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand: #0a7268;
+      --brand-dark: #124c30;
+      --line: #c4d9d0;
+      --ink: #1f2724;
+      --page-w: 210mm;
+      --page-h: 297mm;
+      --page-margin: 10mm;
+      --content-w: calc(var(--page-w) - (var(--page-margin) * 2));
+      --content-h: calc(var(--page-h) - (var(--page-margin) * 2));
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(160deg, #ddf0e8 0%, #c8e6d8 40%, #b8dece 100%);
+      font-family: "Varela Round", sans-serif;
+      color: var(--ink);
+      padding: 1.5rem;
+    }
+
+    .flyer {
+      width: min(100%, var(--content-w));
+      min-height: var(--content-h);
+      background: linear-gradient(170deg, #f4faf7 0%, #eaf5ef 55%, #dff0e8 100%);
+      border-radius: 14px;
+      padding: 18mm 15mm;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.13);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .flyer::before,
+    .flyer::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .flyer::before {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(10,114,104,0.13) 0%, rgba(10,114,104,0) 70%);
+      top: -80px;
+      right: -60px;
+    }
+
+    .flyer::after {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(10,114,104,0.10) 0%, rgba(10,114,104,0) 70%);
+      bottom: -120px;
+      left: -100px;
+    }
+
+    .header, .eyebrow, .subhead, .bullets, .promise, .scan-strip, .footer { position: relative; z-index: 1; }
+
+    .eyebrow {
+      align-self: flex-start;
+      background: rgba(10,114,104,0.14);
+      border: 1px solid rgba(10,114,104,0.26);
+      color: #0d5f57;
+      border-radius: 999px;
+      padding: 0.38rem 0.8rem;
+      font-size: clamp(0.92rem, 1.15vw, 1.02rem);
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.9rem;
+    }
+
+    h1 {
+      font-family: "Rubik", sans-serif;
+      font-size: clamp(2.35rem, 3.4vw, 3.05rem);
+      font-weight: 700;
+      line-height: 1.12;
+      color: var(--brand-dark);
+      flex: 1;
+    }
+
+    .subhead {
+      font-size: clamp(1.18rem, 1.55vw, 1.34rem);
+      line-height: 1.48;
+      font-weight: 600;
+      color: #1b4f3a;
+    }
+
+    .logo-globe {
+      width: clamp(64px, 8vw, 84px);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .bullets li {
+      list-style: disc;
+      margin-left: 1.2rem;
+      font-size: clamp(1.16rem, 1.45vw, 1.28rem);
+      line-height: 1.52;
+      color: var(--ink);
+    }
+
+    .promise {
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      padding: 0.95rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .promise .intro-line {
+      font-size: clamp(1.13rem, 1.34vw, 1.24rem);
+      line-height: 1.52;
+      font-weight: 600;
+    }
+
+    .promise li {
+      list-style: disc;
+      margin-left: 1.2rem;
+      font-size: clamp(1.08rem, 1.25vw, 1.18rem);
+      line-height: 1.5;
+    }
+
+    .scan-strip {
+      border: 1px solid #b8d4c8;
+      background: rgba(255,255,255,0.72);
+      border-radius: 12px;
+      padding: 0.85rem 0.95rem;
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+    }
+
+    .scan-steps {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .scan-steps p {
+      font-size: clamp(1.04rem, 1.18vw, 1.12rem);
+      line-height: 1.45;
+      font-weight: 600;
+      color: #1a3e31;
+    }
+
+    .qr-placeholder {
+      width: 92px;
+      height: 92px;
+      border: 2px dashed #7fa89a;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 0.74rem;
+      line-height: 1.2;
+      color: #4f6a61;
+      flex-shrink: 0;
+      background: #f9fdfb;
+      font-weight: 700;
+    }
+
+    .qr-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      flex-shrink: 0;
+    }
+
+    .qr-code {
+      width: 92px;
+      height: 92px;
+      border: 1px solid #7fa89a;
+      border-radius: 10px;
+      background: #ffffff;
+      display: block;
+    }
+
+    .qr-caption {
+      font-size: 0.68rem;
+      line-height: 1.2;
+      color: #4f6a61;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: auto;
+    }
+
+    .cta {
+      font-family: "Rubik", sans-serif;
+      font-size: clamp(1.75rem, 2.3vw, 2.12rem);
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a928a;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: var(--page-margin);
+    }
+
+    @media print {
+      html, body {
+        width: var(--page-w);
+        height: var(--page-h);
+      }
+
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+
+      .flyer {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="flyer" role="main" aria-label="Маркетинговый флаер формата A4 для скачивания приложения">
+
+    <p class="eyebrow">Бесплатная загрузка. Без обязательств.</p>
+
+    <div class="header">
+      <h1>Спасаем планету и находим сокровища бесплатно</h1>
+      <img class="logo-globe" src="../../assets/logo/logo.png" alt="Логотип OtherTreasure" />
+    </div>
+
+    <p class="subhead">Сообщество, где обмениваются вместо того, чтобы выбрасывать — и каждый получает полезные вещи бесплатно.</p>
+
+    <ul class="bullets" aria-label="Маркетинговые преимущества">
+      <li>Скачайте бесплатное приложение и присоединяйтесь к сообществу, которому не все равно.</li>
+      <li>Отдавайте вещи бесплатно и спасайте их от мусора.</li>
+      <li>Находите полезные сокровища бесплатно каждый день.</li>
+      <li>Меньше отходов, больше пользы — с телефона, из любой точки мира.</li>
+    </ul>
+
+    <section class="promise" aria-label="Ценностное обещание">
+      <p class="intro-line">Быстрый старт, простое использование, реальное влияние.</p>
+      <ul>
+        <li>Каждая сохраненная вещь — маленькая победа для планеты.</li>
+        <li>Приложение полностью бесплатное и таким останется.</li>
+      </ul>
+    </section>
+
+    <section class="scan-strip" aria-label="Инструкции быстрой установки">
+      <div class="scan-steps">
+        <p>1. Сканируйте QR-код</p>
+        <p>2. Установите за одну минуту</p>
+        <p>3. Начните отдавать и получать бесплатно</p>
+      </div>
+      <a
+        class="qr-link"
+        href="https://mryonisade.github.io/OtherTreasure-/download.html"
+        aria-label="Скан для скачивания приложения"
+      >
+        <img
+          class="qr-code"
+          src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&margin=0&format=svg&data=https%3A%2F%2Fmryonisade.github.io%2FOtherTreasure-%2Fdownload.html"
+          alt="QR-код для скачивания OtherTreasure"
+          loading="eager"
+        />
+        <span class="qr-caption">Умный QR</span>
+      </a>
+    </section>
+
+    <footer class="footer">
+      <p class="cta">Сканируйте. Устанавливайте. Спасайте сокровища.</p>
+      <hr class="divider" />
+      <p class="brand">OTHER TREASURE APP</p>
+    </footer>
+
+  </article>
+</body>
+</html>
