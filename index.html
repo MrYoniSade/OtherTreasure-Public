@@ -559,7 +559,8 @@
     function docHref(base, lang) {
       var suffix = DOC_SUFFIX[lang] || '';
       var folder = (base === 'child-safety') ? 'safety/' : 'legal/';
-      return suffix ? folder + base + suffix + '.html?lang=' + lang : folder + base + '.html?lang=' + lang;
+      // For GitHub Pages: do not use query parameters, just direct file
+      return suffix ? folder + base + suffix + '.html' : folder + base + '.html';
     }
 
     function setText(id, value) {
