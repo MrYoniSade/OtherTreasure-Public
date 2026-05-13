@@ -319,7 +319,7 @@
       <div class="topbar">
         <div class="brand">
           <div class="brand-badge" aria-hidden="true">
-            <img id="brandLogo" class="brand-logo" src="logo.png" alt="OtherTreasure logo" />
+            <img id="brandLogo" class="brand-logo" src="assets/logo.png" alt="OtherTreasure logo" />
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 8h14a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1zm7 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM4 8V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2H4z"/>
             </svg>
@@ -345,7 +345,7 @@
           <h2 id="headline">Give useful things a second life.</h2>
           <p id="tagline">OtherTreasure helps neighbors share free items, reduce waste, and find exactly what they need nearby.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" id="openDownload" href="download.html">Download App</a>
+            <a class="btn btn-primary" id="openDownload" href="app/download.html">Download App</a>
             <a class="btn btn-secondary" id="openWebsite" href="https://othertreasure.app" target="_blank" rel="noopener noreferrer">App Website</a>
           </div>
         </div>
@@ -368,10 +368,10 @@
         <section class="panel">
           <h4 id="legalTitle">Legal Documents</h4>
           <ul class="links">
-            <li><a id="privacyLink" data-doc="privacy-policy" href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a id="termsLink" data-doc="terms" href="terms.html">Terms of Service</a></li>
-            <li><a id="deletionLink" data-doc="data-deletion" href="data-deletion.html">Data Deletion</a></li>
-            <li><a id="childSafetyLink" href="child-safety.html">Child Safety</a></li>
+            <li><a id="privacyLink" data-doc="privacy-policy" href="legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a id="termsLink" data-doc="terms" href="legal/terms.html">Terms of Service</a></li>
+            <li><a id="deletionLink" data-doc="data-deletion" href="legal/data-deletion.html">Data Deletion</a></li>
+            <li><a id="childSafetyLink" href="safety/child-safety.html">Child Safety</a></li>
           </ul>
         </section>
 
@@ -558,7 +558,8 @@
 
     function docHref(base, lang) {
       var suffix = DOC_SUFFIX[lang] || '';
-      return suffix ? base + suffix + '.html?lang=' + lang : base + '.html?lang=' + lang;
+      var folder = (base === 'child-safety') ? 'safety/' : 'legal/';
+      return suffix ? folder + base + suffix + '.html?lang=' + lang : folder + base + '.html?lang=' + lang;
     }
 
     function setText(id, value) {
@@ -611,7 +612,7 @@
         fallbackIcon.style.display = 'none';
       });
 
-      document.getElementById('openDownload').href = 'download.html';
+      document.getElementById('openDownload').href = 'app/download.html';
       document.getElementById('openWebsite').href = APP_WEBSITE_URL;
       document.getElementById('facebookLink').href = FACEBOOK_PAGE_URL;
 
@@ -641,3 +642,5 @@
   </script>
 </body>
 </html>
+
+
